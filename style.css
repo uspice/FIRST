@@ -1,0 +1,63 @@
+html {
+  height:100%;
+}
+
+body {
+  background: black;
+  font-family: Roboto;
+  color: white;
+}
+
+.flexbox {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.relative {
+  position: relative;
+  overflow: hidden;
+}
+
+
+h1 {
+  height: 100px;
+  margin: 0 auto;
+  line-height: 100%;
+  font-size: 24px;
+  text-align: center;
+}
+
+h1::before {
+  content:"";
+  position: absolute;
+  height: 24px;
+  width: 100%;
+  z-index: -1;
+  transform: translateX(-150%) translateY(0%);
+  transition: all 1s ease;
+  background: red;
+
+}
+
+h1:hover::before  {
+  transform: translateX(101%) translateY(0%)
+}
+
+
+h1::after {
+  content:"";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  transform: translateX(50%) translateY(600%);
+  transition: all 1s ease;
+  background: red;
+}
+
+h1:hover::after {
+  transform: translateX(-100%) translateY(600%);
+}
